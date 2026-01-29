@@ -182,6 +182,8 @@
         .hero-photo {
             position: relative;
             animation: fadeIn 0.8s ease-out 0.3s both;
+            max-width: 60%;
+            margin: 0 auto;
         }
 
         @keyframes fadeIn {
@@ -217,7 +219,7 @@
             width: 150px;
             height: 150px;
             background: var(--accent-rust);
-            opacity: 0.15;
+            opacity: 0;
             border-radius: 50%;
             z-index: -1;
         }
@@ -603,8 +605,13 @@
         </div>
         <div class="hero-photo">
             <div class="photo-container">
-
+                <div class="photo-placeholder">
+                    Add your photo here<br>
+                    <small style="font-size: 0.85rem; opacity: 0.8;">Upload to GitHub and update img src</small>
+                </div>
+                <!-- To add your photo: Upload image to GitHub, then replace the div above with:
                 <img src="your-photo.jpg" alt="Krishna Damaraju" style="width: 100%; height: 100%; object-fit: cover;">
+                -->
             </div>
             <div class="photo-accent"></div>
         </div>
