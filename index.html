@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Your Name - Portfolio</title>
+    <title>Krishna Damaraju - Product Manager</title>
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=Manrope:wght@300;400;600&display=swap" rel="stylesheet">
     <style>
         * {
@@ -281,6 +281,8 @@
             justify-content: space-between;
             align-items: start;
             margin-bottom: 1rem;
+            flex-wrap: wrap;
+            gap: 1rem;
         }
 
         .experience-title {
@@ -331,7 +333,7 @@
         /* Skills */
         .skills-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
             gap: 2rem;
         }
 
@@ -362,6 +364,88 @@
             font-size: 0.85rem;
             color: var(--text-secondary);
             border: 1px solid var(--border-light);
+        }
+
+        /* Education Section */
+        .education-grid {
+            display: grid;
+            gap: 2rem;
+        }
+
+        .education-card {
+            background: var(--bg-white);
+            padding: 2.5rem;
+            border: 1px solid var(--border-light);
+            border-radius: 4px;
+            transition: all 0.3s ease;
+        }
+
+        .education-card:hover {
+            border-color: var(--accent-rust);
+            transform: translateX(10px);
+            box-shadow: -10px 10px 0 var(--border-light);
+        }
+
+        .education-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: start;
+            margin-bottom: 1rem;
+            flex-wrap: wrap;
+            gap: 1rem;
+        }
+
+        .education-degree {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.3rem;
+            font-weight: 700;
+            color: var(--text-primary);
+            margin-bottom: 0.3rem;
+        }
+
+        .education-school {
+            color: var(--accent-rust);
+            font-weight: 600;
+            font-size: 1rem;
+        }
+
+        .education-year {
+            color: var(--text-secondary);
+            font-size: 0.9rem;
+            font-weight: 300;
+        }
+
+        .education-details {
+            color: var(--text-secondary);
+            margin-top: 0.8rem;
+            line-height: 1.7;
+        }
+
+        /* Certifications */
+        .cert-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .cert-item {
+            background: var(--bg-white);
+            padding: 1.5rem;
+            border: 1px solid var(--border-light);
+            border-radius: 4px;
+            border-left: 4px solid var(--accent-rust);
+            transition: all 0.3s ease;
+        }
+
+        .cert-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+        }
+
+        .cert-item h4 {
+            font-weight: 600;
+            color: var(--text-primary);
+            line-height: 1.4;
         }
 
         /* Contact Section */
@@ -495,10 +579,11 @@
     <!-- Navigation -->
     <nav>
         <div class="nav-container">
-            <a href="#" class="nav-logo">YOUR NAME</a>
+            <a href="#" class="nav-logo">KRISHNA DAMARAJU</a>
             <ul class="nav-links">
                 <li><a href="#experience">Experience</a></li>
                 <li><a href="#skills">Skills</a></li>
+                <li><a href="#education">Education</a></li>
                 <li><a href="#contact">Contact</a></li>
             </ul>
         </div>
@@ -507,21 +592,24 @@
     <!-- Hero Section -->
     <section class="hero">
         <div class="hero-text">
-            <h1>Product Manager & <span class="accent">Problem Solver</span></h1>
+            <h1>Product Manager & <span class="accent">Data-Driven Innovator</span></h1>
             <p class="tagline">
-                Building digital experiences that users love. Bridging the gap between vision and execution.
+                Building AI-powered products that scale. Transforming complex data into actionable product strategy.
             </p>
             <div class="hero-cta">
                 <a href="#contact" class="btn btn-primary">Get in Touch</a>
-                <a href="#experience" class="btn btn-secondary">View Work</a>
+                <a href="#experience" class="btn btn-secondary">View Experience</a>
             </div>
         </div>
         <div class="hero-photo">
             <div class="photo-container">
                 <div class="photo-placeholder">
-                    Replace this with your photo<br>
-                    <small style="font-size: 0.85rem; opacity: 0.8;">(Add your image in the img tag)</small>
+                    Add your photo here<br>
+                    <small style="font-size: 0.85rem; opacity: 0.8;">Upload to GitHub and update img src</small>
                 </div>
+                <!-- To add your photo: Upload image to GitHub, then replace the div above with:
+                <img src="your-photo.jpg" alt="Krishna Damaraju" style="width: 100%; height: 100%; object-fit: cover;">
+                -->
             </div>
             <div class="photo-accent"></div>
         </div>
@@ -539,17 +627,18 @@
             <div class="experience-card">
                 <div class="experience-header">
                     <div>
-                        <h3 class="experience-title">Senior Product Manager</h3>
-                        <div class="experience-company">Company Name</div>
+                        <h3 class="experience-title">Product Manager</h3>
+                        <div class="experience-company">NAPA Auto Parts & Equifax</div>
                     </div>
-                    <div class="experience-date">2022 - Present</div>
+                    <div class="experience-date">May 2023 - Present</div>
                 </div>
                 <div class="experience-description">
-                    Led product strategy and execution for flagship product serving 100K+ users
+                    Leading ML-based product initiatives driving measurable business impact
                     <ul>
-                        <li>Increased user engagement by 45% through data-driven feature prioritization</li>
-                        <li>Managed cross-functional team of 12 engineers, designers, and analysts</li>
-                        <li>Launched 3 major features that drove $2M in additional revenue</li>
+                        <li>Drove revenue growth by leading ML-based deduplication of 2M+ auto parts, improving SKU discoverability and reducing "No Results Found" pages by 10%</li>
+                        <li>Launched scalable taxonomy classification that reduced irrelevant product placements by 25%, improving search-to-purchase user journeys</li>
+                        <li>Built stakeholder trust by designing confidence scoring models, cutting down manual validation cycles by 40%</li>
+                        <li>Accelerated global compliance by leading development of a data maintenance solution aligned with regional regulations</li>
                     </ul>
                 </div>
             </div>
@@ -558,16 +647,17 @@
                 <div class="experience-header">
                     <div>
                         <h3 class="experience-title">Product Manager</h3>
-                        <div class="experience-company">Previous Company</div>
+                        <div class="experience-company">Salesloft Inc.</div>
                     </div>
-                    <div class="experience-date">2020 - 2022</div>
+                    <div class="experience-date">Aug 2021 - Dec 2022</div>
                 </div>
                 <div class="experience-description">
-                    Owned end-to-end product development from ideation to launch
+                    Launched industry-first AI/ML features and drove product strategy
                     <ul>
-                        <li>Conducted user research with 500+ customers to validate product-market fit</li>
-                        <li>Defined product roadmap and prioritized features based on impact vs. effort</li>
-                        <li>Collaborated with stakeholders across marketing, sales, and engineering</li>
+                        <li>Launched three industry-first AI/ML features (email sentiment analysis, forecasting models, recommender systems), increasing user engagement by 15%</li>
+                        <li>Prioritized feature delivery by balancing OKRs, customer insights, technical debt, and Salesforce integration goals</li>
+                        <li>Drove agile execution through daily collaboration with Data Science, Front End, Backend, QA, and Architecture teams</li>
+                        <li>Established data-driven feedback loops through Looker dashboards, shaping future roadmap priorities based on feature KPIs</li>
                     </ul>
                 </div>
             </div>
@@ -575,17 +665,37 @@
             <div class="experience-card">
                 <div class="experience-header">
                     <div>
-                        <h3 class="experience-title">Associate Product Manager</h3>
-                        <div class="experience-company">First Company</div>
+                        <h3 class="experience-title">Product Owner</h3>
+                        <div class="experience-company">Bakkt Inc.</div>
                     </div>
-                    <div class="experience-date">2018 - 2020</div>
+                    <div class="experience-date">Apr 2014 - Jul 2021</div>
                 </div>
                 <div class="experience-description">
-                    Supported senior PMs in delivering customer-focused solutions
+                    Built and scaled B2B2C loyalty and travel solutions
                     <ul>
-                        <li>Analyzed product metrics and presented insights to leadership</li>
-                        <li>Created product specs and user stories for development sprints</li>
-                        <li>Facilitated stakeholder meetings and gathered requirements</li>
+                        <li>Built and launched a B2B2C loyalty solution connecting major banks to experiential rewards, helping drive program adoption across 1M+ customers</li>
+                        <li>Led product development for a configurable SaaS Travel platform (cars, hotels, flights) customized for enterprise clients, scaling to multiple Fortune 500 partners</li>
+                        <li>Enhanced client satisfaction through direct engagement, market research, and tailored product adaptations</li>
+                        <li>Drove agile release planning, enabling 3–4 successful product releases per year through structured governance models</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="experience-card">
+                <div class="experience-header">
+                    <div>
+                        <h3 class="experience-title">Business Analyst</h3>
+                        <div class="experience-company">RouteOne Inc., Ford Motor Company</div>
+                    </div>
+                    <div class="experience-date">Nov 2011 - Apr 2014</div>
+                </div>
+                <div class="experience-description">
+                    Led requirements gathering and agile execution for enterprise systems
+                    <ul>
+                        <li>Led requirement gathering and prioritization for mainframe purchasing system, contracting system and related mobile applications</li>
+                        <li>Conducted defect review meetings that included personnel from both business and development</li>
+                        <li>Authored functional scenarios and test scripts based on the business requirements</li>
+                        <li>Managed communication with offshore QA teams to resolve any requirement related queries</li>
                     </ul>
                 </div>
             </div>
@@ -602,45 +712,115 @@
 
         <div class="skills-grid">
             <div class="skill-category">
-                <h3>Product Strategy</h3>
-                <div class="skill-tags">
-                    <span class="skill-tag">Roadmap Planning</span>
-                    <span class="skill-tag">Market Research</span>
-                    <span class="skill-tag">Competitive Analysis</span>
-                    <span class="skill-tag">OKRs & KPIs</span>
-                </div>
-            </div>
-
-            <div class="skill-category">
-                <h3>Technical Skills</h3>
+                <h3>Data Analysis & Languages</h3>
                 <div class="skill-tags">
                     <span class="skill-tag">SQL</span>
-                    <span class="skill-tag">Python</span>
-                    <span class="skill-tag">API Design</span>
+                    <span class="skill-tag">Python (Pandas, NumPy)</span>
+                    <span class="skill-tag">R (Statistical Modeling)</span>
+                    <span class="skill-tag">Excel (Advanced)</span>
+                </div>
+            </div>
+
+            <div class="skill-category">
+                <h3>Analytics & Modeling</h3>
+                <div class="skill-tags">
+                    <span class="skill-tag">Linear/Logistic Regression</span>
+                    <span class="skill-tag">Time Series Forecasting</span>
                     <span class="skill-tag">A/B Testing</span>
-                    <span class="skill-tag">Analytics</span>
+                    <span class="skill-tag">Clustering (k-Means)</span>
+                    <span class="skill-tag">Optimization Models</span>
                 </div>
             </div>
 
             <div class="skill-category">
-                <h3>Tools & Platforms</h3>
+                <h3>Visualization & Tools</h3>
                 <div class="skill-tags">
-                    <span class="skill-tag">Jira</span>
-                    <span class="skill-tag">Figma</span>
-                    <span class="skill-tag">Amplitude</span>
-                    <span class="skill-tag">Mixpanel</span>
+                    <span class="skill-tag">Tableau</span>
+                    <span class="skill-tag">Looker</span>
                     <span class="skill-tag">Google Analytics</span>
+                    <span class="skill-tag">Jira</span>
+                    <span class="skill-tag">Confluence</span>
+                    <span class="skill-tag">MS Visio</span>
                 </div>
             </div>
 
             <div class="skill-category">
-                <h3>Soft Skills</h3>
+                <h3>Methodologies</h3>
                 <div class="skill-tags">
-                    <span class="skill-tag">Stakeholder Management</span>
-                    <span class="skill-tag">User Research</span>
                     <span class="skill-tag">Agile/Scrum</span>
-                    <span class="skill-tag">Leadership</span>
+                    <span class="skill-tag">SDLC</span>
+                    <span class="skill-tag">User Story Mapping</span>
+                    <span class="skill-tag">Roadmap Planning</span>
+                    <span class="skill-tag">Requirement Elicitation</span>
                 </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Education Section -->
+    <section id="education">
+        <div class="section-header">
+            <span class="section-number">03</span>
+            <h2 class="section-title">Education</h2>
+            <div class="section-divider"></div>
+        </div>
+
+        <div class="education-grid">
+            <div class="education-card">
+                <div class="education-header">
+                    <div>
+                        <h3 class="education-degree">MS in Analytics</h3>
+                        <div class="education-school">Georgia Institute of Technology</div>
+                    </div>
+                    <div class="education-year">Expected 2027</div>
+                </div>
+                <div class="education-details">
+                    Core Coursework: Introduction to Analytics Modeling; Computing for Data Analysis (Spring 2026)
+                </div>
+            </div>
+
+            <div class="education-card">
+                <div class="education-header">
+                    <div>
+                        <h3 class="education-degree">MS in Computer Information Systems</h3>
+                        <div class="education-school">Georgia State University</div>
+                    </div>
+                    <div class="education-year">2003</div>
+                </div>
+            </div>
+
+            <div class="education-card">
+                <div class="education-header">
+                    <div>
+                        <h3 class="education-degree">BBA - Double Major</h3>
+                        <div class="education-school">Georgia State University</div>
+                    </div>
+                    <div class="education-year">2003</div>
+                </div>
+                <div class="education-details">
+                    Computer Information Systems & Managerial Sciences
+                </div>
+            </div>
+        </div>
+
+        <div class="section-header" style="margin-top: 4rem;">
+            <span class="section-number">04</span>
+            <h2 class="section-title">Certifications</h2>
+            <div class="section-divider"></div>
+        </div>
+
+        <div class="cert-grid">
+            <div class="cert-item">
+                <h4>Google Advanced Data Analytics Certification</h4>
+            </div>
+            <div class="cert-item">
+                <h4>Certified Scrum Product Owner (CSPO)</h4>
+            </div>
+            <div class="cert-item">
+                <h4>Certified Business Analysis Professional (CBAP)</h4>
+            </div>
+            <div class="cert-item">
+                <h4>AI Product Management Nanodegree (Udacity)</h4>
             </div>
         </div>
     </section>
@@ -648,41 +828,41 @@
     <!-- Contact Section -->
     <section id="contact">
         <div class="section-header">
-            <span class="section-number">03</span>
+            <span class="section-number">05</span>
             <h2 class="section-title">Let's Connect</h2>
             <div class="section-divider"></div>
         </div>
 
         <div class="contact-links">
-            <a href="mailto:your.email@example.com" class="contact-card">
+            <a href="mailto:krisdam@gmail.com" class="contact-card">
                 <div class="contact-icon">📧</div>
                 <h3>Email</h3>
-                <p>your.email@example.com</p>
+                <p>krisdam@gmail.com</p>
             </a>
 
-            <a href="https://linkedin.com/in/yourprofile" target="_blank" class="contact-card">
+            <a href="https://www.linkedin.com/in/krisdam" target="_blank" class="contact-card">
                 <div class="contact-icon">💼</div>
                 <h3>LinkedIn</h3>
-                <p>Connect professionally</p>
+                <p>linkedin.com/in/krisdam</p>
             </a>
 
-            <a href="https://github.com/yourusername" target="_blank" class="contact-card">
+            <a href="https://github.com/krisdam" target="_blank" class="contact-card">
                 <div class="contact-icon">💻</div>
                 <h3>GitHub</h3>
-                <p>View my code</p>
+                <p>github.com/krisdam</p>
             </a>
 
-            <a href="https://twitter.com/yourhandle" target="_blank" class="contact-card">
-                <div class="contact-icon">🐦</div>
-                <h3>Twitter</h3>
-                <p>Follow my thoughts</p>
+            <a href="tel:404-992-2298" class="contact-card">
+                <div class="contact-icon">📱</div>
+                <h3>Phone</h3>
+                <p>404-992-2298</p>
             </a>
         </div>
     </section>
 
     <!-- Footer -->
     <footer>
-        <p>© 2026 Your Name. Built with vibe coding.</p>
+        <p>© 2026 Krishna Damaraju. Built with vibe coding.</p>
     </footer>
 
     <script>
@@ -715,7 +895,7 @@
             });
         }, observerOptions);
 
-        document.querySelectorAll('.experience-card, .skill-category, .contact-card').forEach(el => {
+        document.querySelectorAll('.experience-card, .skill-category, .contact-card, .education-card, .cert-item').forEach(el => {
             el.style.opacity = '0';
             observer.observe(el);
         });
