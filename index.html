@@ -332,6 +332,188 @@
             color: var(--accent-rust);
         }
 
+        /* ========== PROJECT HOVER CARDS ========== */
+        .projects-cards-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 24px;
+        }
+
+        .project-card {
+            position: relative;
+            aspect-ratio: 1 / 1.15;
+            border-radius: 12px;
+            overflow: hidden;
+            cursor: pointer;
+            transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1), box-shadow 0.4s ease;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.15);
+        }
+
+        .project-card:hover {
+            transform: translateY(-8px) scale(1.02);
+            box-shadow: 0 30px 60px rgba(0,0,0,0.25), 0 0 0 1px rgba(255,255,255,0.08);
+        }
+
+        .project-card .card-pattern {
+            position: absolute;
+            inset: 0;
+            opacity: 0.04;
+            background-image: radial-gradient(circle at 25% 25%, white 1px, transparent 1px);
+            background-size: 24px 24px;
+            pointer-events: none;
+        }
+
+        /* Default state */
+        .card-default {
+            position: absolute;
+            inset: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 28px;
+            transition: opacity 0.35s ease, transform 0.35s ease;
+            z-index: 2;
+        }
+
+        .project-card:hover .card-default {
+            opacity: 0;
+            transform: translateY(-20px);
+        }
+
+        .card-default .card-icon {
+            font-size: 48px;
+            margin-bottom: 16px;
+            filter: drop-shadow(0 4px 8px rgba(0,0,0,0.3));
+        }
+
+        .card-default .card-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.4rem;
+            font-weight: 900;
+            color: #fff;
+            text-align: center;
+            margin: 0 0 8px;
+        }
+
+        .card-default .card-tagline {
+            font-family: 'Manrope', sans-serif;
+            font-size: 0.8rem;
+            font-weight: 600;
+            text-align: center;
+            margin: 0;
+            letter-spacing: 0.3px;
+        }
+
+        /* Hover state */
+        .card-hover {
+            position: absolute;
+            inset: 0;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            padding: 28px;
+            background: linear-gradient(180deg, rgba(0,0,0,0.05) 0%, rgba(0,0,0,0.55) 100%);
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.35s ease, transform 0.35s ease;
+            z-index: 3;
+        }
+
+        .project-card:hover .card-hover {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .card-hover .hover-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.3rem;
+            font-weight: 900;
+            color: #fff;
+            margin: 0 0 10px;
+        }
+
+        .card-hover .hover-desc {
+            font-family: 'Manrope', sans-serif;
+            font-size: 0.85rem;
+            color: rgba(255,255,255,0.85);
+            line-height: 1.65;
+            margin: 0 0 14px;
+        }
+
+        .card-hover .tech-tags {
+            display: flex;
+            gap: 6px;
+            flex-wrap: wrap;
+        }
+
+        .card-hover .tech-tag {
+            font-family: 'Manrope', sans-serif;
+            font-size: 0.7rem;
+            font-weight: 600;
+            padding: 4px 10px;
+            border-radius: 20px;
+        }
+
+        .card-hover .card-actions {
+            display: flex;
+            gap: 10px;
+        }
+
+        .card-hover .btn-demo,
+        .card-hover .btn-github {
+            flex: 1;
+            font-family: 'Manrope', sans-serif;
+            font-size: 0.8rem;
+            font-weight: 700;
+            padding: 11px 0;
+            border-radius: 8px;
+            text-decoration: none;
+            text-align: center;
+            letter-spacing: 0.3px;
+            transition: filter 0.2s, background 0.2s;
+        }
+
+        .card-hover .btn-demo {
+            color: #000;
+        }
+
+        .card-hover .btn-demo:hover {
+            filter: brightness(1.15);
+        }
+
+        .card-hover .btn-github {
+            color: #fff;
+            background: rgba(255,255,255,0.12);
+            border: 1px solid rgba(255,255,255,0.25);
+        }
+
+        .card-hover .btn-github:hover {
+            background: rgba(255,255,255,0.22);
+        }
+
+        .projects-hint {
+            font-size: 0.85rem;
+            color: var(--text-secondary);
+            text-align: center;
+            margin-top: 1.5rem;
+            font-weight: 300;
+        }
+
+        /* Project cards responsive */
+        @media (max-width: 900px) {
+            .projects-cards-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+        @media (max-width: 600px) {
+            .projects-cards-grid {
+                grid-template-columns: 1fr;
+                max-width: 360px;
+                margin: 0 auto;
+            }
+        }
+
         /* Skills */
         .skills-grid {
             display: grid;
@@ -605,10 +787,7 @@
             </div>
         </div>
         <div class="hero-photo">
-
-                <img src="your-photo.jpg" alt="Krishna Damaraju" style="width: 100%; height: 100%; object-fit: cover;">
-              
-            </div>
+            <img src="your-photo.jpg" alt="Krishna Damaraju" style="width: 100%; height: 100%; object-fit: cover;">
             <div class="photo-accent"></div>
         </div>
     </section>
@@ -700,7 +879,7 @@
         </div>
     </section>
 
-    <!-- Projects Section -->
+    <!-- Projects Section — Hover Cards -->
     <section id="projects">
         <div class="section-header">
             <span class="section-number">02</span>
@@ -708,83 +887,92 @@
             <div class="section-divider"></div>
         </div>
 
-        <div class="experience-grid">
-            <div class="experience-card">
-                <div class="experience-header">
-                    <div>
-                        <h3 class="experience-title">ClaimSmart</h3>
-                        <div class="experience-company">AI-Powered Insurance Claim Appeal Optimizer</div>
-                    </div>
-                    <div class="experience-date">2025</div>
+        <div class="projects-cards-grid">
+
+            <!-- Card 1: AutoClassify -->
+            <div class="project-card" style="background: linear-gradient(135deg, #2c3e2e, #3a5a40, #4a7c59);">
+                <div class="card-pattern"></div>
+                <div class="card-default">
+                    <span class="card-icon">⚙️</span>
+                    <h3 class="card-title">AutoClassify</h3>
+                    <p class="card-tagline" style="color: #a7d9b2;">ML Auto Parts Taxonomy Classifier</p>
                 </div>
-                <div class="experience-description">
-                    Full-stack ML application that predicts which denied insurance claims are worth appealing, helping healthcare providers maximize revenue recovery.
-                    <ul>
-                        <li>Built a Random Forest classifier achieving 75.7% recall and 72.2% F1 score on synthetic claims data</li>
-                        <li>Developed Flask REST API serving real-time ML predictions with CSV upload support</li>
-                        <li>Created React dashboard with interactive charts, drag-and-drop file upload, and CSV export</li>
-                        <li>Tech stack: Python, scikit-learn, Flask, React, Recharts, Tailwind CSS</li>
-                    </ul>
-                    <div style="margin-top: 1.5rem; display: flex; gap: 1rem;">
-                        <a href="https://github.com/krisdam/claimsmart" target="_blank" class="btn btn-primary" style="font-size: 0.85rem; padding: 0.6rem 1.5rem;">View on GitHub</a>
-                        <a href="https://claimsmart-gg6h5uq6z-krisdam-3415s-projects.vercel.app/" target="_blank" class="btn btn-secondary" style="font-size: 0.85rem; padding: 0.6rem 1.5rem;">Live Demo</a>
+                <div class="card-hover">
+                    <div>
+                        <h3 class="hover-title">AutoClassify</h3>
+                        <p class="hover-desc">TF-IDF + XGBoost achieving 91.6% accuracy on 10K synthetic auto parts with 7 tiers of realistic noise. Demonstrates the taxonomy classification system built at NAPA.</p>
+                        <div class="tech-tags">
+                            <span class="tech-tag" style="color: #a7d9b2; border: 1px solid rgba(167,217,178,0.3); background: rgba(167,217,178,0.1);">XGBoost</span>
+                            <span class="tech-tag" style="color: #a7d9b2; border: 1px solid rgba(167,217,178,0.3); background: rgba(167,217,178,0.1);">Flask</span>
+                            <span class="tech-tag" style="color: #a7d9b2; border: 1px solid rgba(167,217,178,0.3); background: rgba(167,217,178,0.1);">React</span>
+                        </div>
+                    </div>
+                    <div class="card-actions">
+                        <a href="https://autoclassify-jncq.vercel.app/" target="_blank" rel="noopener noreferrer" class="btn-demo" style="background: #a7d9b2;">Live Demo</a>
+                        <a href="https://github.com/krisdam/autoclassify" target="_blank" rel="noopener noreferrer" class="btn-github">GitHub</a>
                     </div>
                 </div>
             </div>
 
-            <div class="experience-card">
-                <div class="experience-header">
-                    <div>
-                        <h3 class="experience-title">Restaurant Admin Portal</h3>
-                        <div class="experience-company">Multi-Brand Restaurant Operations Dashboard</div>
-                    </div>
-                    <div class="experience-date">2025</div>
+            <!-- Card 2: ClaimSmart -->
+            <div class="project-card" style="background: linear-gradient(135deg, #3b1f2b, #6b2e3e, #8c3a4f);">
+                <div class="card-pattern"></div>
+                <div class="card-default">
+                    <span class="card-icon">🏥</span>
+                    <h3 class="card-title">ClaimSmart</h3>
+                    <p class="card-tagline" style="color: #f0b8a8;">AI Insurance Claim Appeal Optimizer</p>
                 </div>
-                <div class="experience-description">
-                    Interactive demo of a Restaurant Admin Portal for a fictional multi-brand restaurant group (Meridian), showcasing product thinking across operations, integrations, and roadmap prioritization.
-                    <ul>
-                        <li>Designed multi-brand dashboard with KPIs, revenue trends, and order channel analytics across 3 restaurant brands and 135 locations</li>
-                        <li>Built operations hub with labor scheduling (Scheduled vs Actual vs ML-Optimal), real-time order volume, and PAR-level inventory alerts</li>
-                        <li>Created API integration architecture panel mapping 10 restaurant tech systems (Toast, DoorDash, OpenTable, 7shifts, Snowflake) with health monitoring</li>
-                        <li>Developed RICE-scored product roadmap with sortable prioritization across 8 restaurant tech features</li>
-                        <li>Tech stack: React, Recharts, Vite, Tailwind CSS</li>
-                    </ul>
-                    <div style="margin-top: 1.5rem; display: flex; gap: 1rem;">
-                        <a href="https://github.com/krisdam/restaurant-admin-portal" target="_blank" class="btn btn-primary" style="font-size: 0.85rem; padding: 0.6rem 1.5rem;">View on GitHub</a>
-                        <a href="https://restaurant-admin-portal.vercel.app/" target="_blank" class="btn btn-secondary" style="font-size: 0.85rem; padding: 0.6rem 1.5rem;">Live Demo</a>
+                <div class="card-hover">
+                    <div>
+                        <h3 class="hover-title">ClaimSmart</h3>
+                        <p class="hover-desc">Random Forest classifier predicting which denied insurance claims are worth appealing, helping healthcare providers maximize revenue recovery.</p>
+                        <div class="tech-tags">
+                            <span class="tech-tag" style="color: #f0b8a8; border: 1px solid rgba(240,184,168,0.3); background: rgba(240,184,168,0.1);">scikit-learn</span>
+                            <span class="tech-tag" style="color: #f0b8a8; border: 1px solid rgba(240,184,168,0.3); background: rgba(240,184,168,0.1);">Flask</span>
+                            <span class="tech-tag" style="color: #f0b8a8; border: 1px solid rgba(240,184,168,0.3); background: rgba(240,184,168,0.1);">React</span>
+                        </div>
+                    </div>
+                    <div class="card-actions">
+                        <a href="https://claimsmart-gg6h5uq6z-krisdam-3415s-projects.vercel.app/" target="_blank" rel="noopener noreferrer" class="btn-demo" style="background: #f0b8a8;">Live Demo</a>
+                        <a href="https://github.com/krisdam/claimsmart" target="_blank" rel="noopener noreferrer" class="btn-github">GitHub</a>
                     </div>
                 </div>
             </div>
-            <div class="experience-card">
-                <div class="experience-header">
-                    <div>
-                        <h3 class="experience-title">AutoClassify</h3>
-                        <div class="experience-company">ML-Powered Auto Parts Taxonomy Classifier</div>
-                    </div>
-                    <div class="experience-date">2025</div>
+
+            <!-- Card 3: Restaurant Portal -->
+            <div class="project-card" style="background: linear-gradient(135deg, #2a2438, #3d3356, #564a72);">
+                <div class="card-pattern"></div>
+                <div class="card-default">
+                    <span class="card-icon">🍽️</span>
+                    <h3 class="card-title">Restaurant Portal</h3>
+                    <p class="card-tagline" style="color: #c9b8db;">Multi-Brand Ops Dashboard</p>
                 </div>
-                <div class="experience-description">
-                    End-to-end ML pipeline that classifies auto parts into 13 product categories using text descriptions &mdash; demonstrating the taxonomy classification system built at NAPA Auto Parts / Equifax that reduced irrelevant product placements by 25% and cut manual validation by 40%.
-                    <ul>
-                        <li>Trained TF-IDF + XGBoost classifier on 10,000 synthetic parts with 7 tiers of realistic noise (typos, supplier feed garbage, part-number-only entries), achieving 91.6% accuracy</li>
-                        <li>Built confidence threshold tuner &mdash; a PM decision tool balancing automation vs. accuracy, showing real-time impact on auto-classification rates</li>
-                        <li>Multi-label detection flags parts belonging to multiple categories (e.g., brake fluid &rarr; Brakes + Accessories) for human review</li>
-                        <li>Deployed Flask API on Render serving real-time predictions with single-part and batch CSV classification endpoints</li>
-                        <li>Tech stack: Python, scikit-learn, XGBoost, Flask, React, Recharts, Render, Vercel</li>
-                    </ul>
-                    <div style="margin-top: 1.5rem; display: flex; gap: 1rem;">
-                        <a href="https://github.com/krisdam/autoclassify" target="_blank" class="btn btn-primary" style="font-size: 0.85rem; padding: 0.6rem 1.5rem;">View on GitHub</a>
-                        <a href="https://autoclassify-jncq.vercel.app/" target="_blank" class="btn btn-secondary" style="font-size: 0.85rem; padding: 0.6rem 1.5rem;">Live Demo</a>
+                <div class="card-hover">
+                    <div>
+                        <h3 class="hover-title">Restaurant Portal</h3>
+                        <p class="hover-desc">Product thinking demo: KPIs, labor scheduling, API integrations, and RICE-scored roadmap for a fictional multi-brand group across 135 locations.</p>
+                        <div class="tech-tags">
+                            <span class="tech-tag" style="color: #c9b8db; border: 1px solid rgba(201,184,219,0.3); background: rgba(201,184,219,0.1);">React</span>
+                            <span class="tech-tag" style="color: #c9b8db; border: 1px solid rgba(201,184,219,0.3); background: rgba(201,184,219,0.1);">Recharts</span>
+                            <span class="tech-tag" style="color: #c9b8db; border: 1px solid rgba(201,184,219,0.3); background: rgba(201,184,219,0.1);">Tailwind</span>
+                        </div>
+                    </div>
+                    <div class="card-actions">
+                        <a href="https://restaurant-admin-portal.vercel.app/" target="_blank" rel="noopener noreferrer" class="btn-demo" style="background: #c9b8db;">Live Demo</a>
+                        <a href="https://github.com/krisdam/restaurant-admin-portal" target="_blank" rel="noopener noreferrer" class="btn-github">GitHub</a>
                     </div>
                 </div>
             </div>
+
         </div>
+
+        <p class="projects-hint">Hover over a card to explore</p>
     </section>
-    <!-- Skills Section -->
+
     <!-- Skills Section -->
     <section id="skills">
         <div class="section-header">
-            <span class="section-number">02</span>
+            <span class="section-number">03</span>
             <h2 class="section-title">Skills</h2>
             <div class="section-divider"></div>
         </div>
@@ -839,7 +1027,7 @@
     <!-- Education Section -->
     <section id="education">
         <div class="section-header">
-            <span class="section-number">03</span>
+            <span class="section-number">04</span>
             <h2 class="section-title">Education</h2>
             <div class="section-divider"></div>
         </div>
@@ -883,7 +1071,7 @@
         </div>
 
         <div class="section-header" style="margin-top: 4rem;">
-            <span class="section-number">04</span>
+            <span class="section-number">05</span>
             <h2 class="section-title">Certifications</h2>
             <div class="section-divider"></div>
         </div>
@@ -907,7 +1095,7 @@
     <!-- Contact Section -->
     <section id="contact">
         <div class="section-header">
-            <span class="section-number">05</span>
+            <span class="section-number">06</span>
             <h2 class="section-title">Let's Connect</h2>
             <div class="section-divider"></div>
         </div>
@@ -941,7 +1129,7 @@
 
     <!-- Footer -->
     <footer>
-        <p>© 2026 Krishna Damaraju</p>
+        <p>&copy; 2026 Krishna Damaraju</p>
     </footer>
 
     <script>
@@ -974,7 +1162,7 @@
             });
         }, observerOptions);
 
-        document.querySelectorAll('.experience-card, .skill-category, .contact-card, .education-card, .cert-item').forEach(el => {
+        document.querySelectorAll('.experience-card, .skill-category, .contact-card, .education-card, .cert-item, .project-card').forEach(el => {
             el.style.opacity = '0';
             observer.observe(el);
         });
